@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "bitcoinjs-lib": "^5.2.0",
+    "dotenv": "^16.4.1",
     "ecpair": "^2.1.0",
     "tiny-secp256k1": "^2.2.3",
     "tsconfig-paths": "^4.2.0"
