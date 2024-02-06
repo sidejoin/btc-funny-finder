@@ -1,8 +1,11 @@
 import ECPairFactory from 'ecpair'
+import fs from 'fs'
+import path from 'path'
 import * as ecc from 'tiny-secp256k1'
 import { payments } from 'bitcoinjs-lib'
-import addresses from './addresses.json'
 const ECPair = ECPairFactory(ecc)
+
+const addresses = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../address.json'), 'utf8'))
 
 const check = () => {
   const kp = ECPair.makeRandom()
@@ -22,5 +25,5 @@ const check = () => {
   setTimeout(() => check())
 }
 
-console.log('funny start...')
 check()
+console.log(`funny start in ${addresses.length} addr ...`)
